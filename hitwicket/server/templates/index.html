@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Festava Live - Bootstrap 5 CSS Template</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="static/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="static/css/templatemo-festava-live.css" rel="stylesheet">
+
+    <link href="static/css/main.css" rel="stylesheet">
+
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+</head>
+
+<body>
+
+    <main>
+        
+
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    HitChess.com
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" id="roomid" href="#section_4"></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" id="yourtrn" href="#section_5"></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6" id="player"></a>
+                        </li>
+                    </ul>
+
+<button id="disconnect-button" class="hidden"  onclick="disconnectFromRoom()">Disconnect</button>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-around align-items-center">
+                <div class="row" style="height:450px">
+
+                    <div class="col-6 text-center"style="height:450px">
+                        <small><div id="turn-info" class="hidden">
+
+
+
+
+
+                            <h3 style="font-size: medium;color: #D9E3DA;">Current Turn: <span id="current-turn-player">None</span></h3>
+                        </div></small>
+
+                        <h1 class="text-white mb-5" ><div id="board-game" class="hidden" ></div></h1>
+                        
+                        <div id="container" style="color:white;background-color: rgba(0, 0, 0, 0.431);">
+                            select the arrangement
+                            <!-- Blocks will be added dynamically -->
+                        </div>
+                            
+                        <a class="btn custom-btn smoothscroll" id="join-room-button" onclick="joinRoom()">Join Room</a><br><br>
+                        <div id="join-room-form" class="hidden"><input style="font-size: medium; border-radius: 15px;background-color: #ffffff5a;color:#D9E3DA;" id="room-id-input" type="text" placeholder="Enter room ID" /><br><br>
+                            <input style="font-size: medium; border-radius: 15px;background-color: #ffffff5a;color:#D9E3DA;" id="username-input" type="text" placeholder="Enter your username" /></div>
+                        
+                        
+                            <div id="notification2" class="notification hidden">
+                                <p id="notification-message2">This is a notification!</p>
+                            </div>
+                            
+
+
+                        <a class="btn custom-btn smoothscroll" onclick="createRoom()" id="create-room-button" >Create Room</a><br><br>
+                        <div id="create-room-form" class="hidden"><input style="font-size: medium; border-radius: 15px;background-color: #ffffff5a;color:#D9E3DA;" id="create-username-input" type="text" placeholder="Enter your username" />
+                            
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="col-4 date-wrap">
+                        <h5 class="text-white">
+                            
+
+
+                            <div id="chat" class="hidden"  >
+                               
+                                <div style="display: inline;">
+                                <h5 class="text-white" >
+                                
+                            
+                                    <input id="command-messages-input" class="hidden" style="font-size: medium; border-radius: 15px;background-color: #ffffff5a;color:#D9E3DA;"  type="text" placeholder="Enter command [e.g A-P1:L ]" />
+                                    <button id="command-messages-button" class="hidden" style="font-size: medium;" onclick="sendcommandMessage()">Send command</button>
+
+                                    <div id="notification" class="notification hidden">
+                                        <p id="notification-message">This is a notification!</p>
+                                    </div>
+                                
+                            </h5></div>
+                                <div style="font-size: medium;width:100%;height:200px;overflow:auto;background-color: #d9e3da89;"id="messages"  ></div>
+                                <div style="display: inline;">
+                                <input style="font-size: medium;width:60%;background-color: #ffffff5a;color:#D9E3DA;" id="message-input" type="text" placeholder="Enter message" />
+                                <button  style="font-size: medium;" onclick="sendMessage()">Send</button><br><br>
+                                
+                                </div>
+                                
+                                
+                            </div>
+                        </h5>
+
+
+                    </div>
+                    <div class="col-2 date-wrap"   >
+                        <div id="movesnplayers" class="hidden" style="background-color: rgba(0, 0, 0, 0.449)">
+                        <div style="font-size: small;color:white"  >MOVES</div><br>
+
+                                <div style="font-size: small;color:white" id="description-move" class="hidden"></div><br>
+                                <span style="background-color: #5a5a5a69;" class="text-white me-3"><div id="player-info" >
+                                    
+                                    
+                                    <h3 style="font-size: small;color: #D9E3DA;">Players in Room</h3>
+                                    <ul id="player-list" style="font-size:x-small;"></ul>
+                            
+                                </div></span>
+                        </div>
+
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="static/video/pexels-2022395.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+   
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.sticky.js"></script>
+    <script src="static/js/click-scroll.js"></script>
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light grey background */
+    color: #333; /* Dark grey text color */
+    margin: 0;
+    padding: 0;
+   
+    text-align: center; /* Center all text */
+}
+input{
+    height: 30px;
+}
+
+h1 {
+    color: #333;
+    margin: 20px 0;
+}
+
+#player-info {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px; /* Max width for larger screens */
+    text-align: left; /* Align text to the left */
+}
+
+#turn-info {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#player-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#player-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#player-list li:last-child {
+    border-bottom: none;
+}
+
+#board-game {
+    background-color: #373737ef; /* White background for the board */
+    padding: 20px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 350px; /* Adjust width as needed */
+    text-align: center;
+}
+
+table {
+    border: 2px solid white;
+    
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    border-collapse: separate; /* Ensure border-spacing is applied */
+    border-spacing: 3px;
+}
+
+td {
+    border: 1px solid #bdbdbd00; /* Light grey border */
+    width: 60px;
+    height: 60px;
+    
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffffff00; /* Very light grey background for cells */
+    font-size: 10px;
+    font-weight: bold;
+    
+    transition: background-color 0.3s ease, color 0.3s ease;
+   
+    border-radius: 2px; /* Rounded corners */
+    border: 1px solid rgb(255, 255, 255);
+}
+
+td:hover {
+    background-color: #8d5df4; /* Light grey background on hover */
+    color: #000000; /* Dark text color on hover */
+}
+
+/* Optional: Different colors for each type of character for better visual differentiation */
+.A-H1, .A-H2, .A-H3 {
+    background-color: #dd6d76; /* Light red */
+}
+
+.A-P1, .A-P2 {
+    background-color: #ffd447; /* Light beige */
+}
+
+.B-H1, .B-H2, .B-H3 {
+    background-color: #3dcbe4; /* Light blue */
+}
+
+.B-P1, .B-P2 {
+    background-color: #88e13f; /* Light cyan */
+}
+
+#controls {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px; /* Max width for larger screens */
+    text-align: center;
+}
+
+button {
+    background-color: #EE5007; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 5px; /* Space between buttons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+button:active {
+    background-color: #004494; /* Even darker blue when clicked */
+    transform: scale(1); /* Return to normal size */
+}
+.notification {
+    position: fixed;
+    bottom: 200px;
+    right: 200px;
+    width: 250px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.809); /* Semi-transparent background */
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(45, 45, 45, 0.3);
+    backdrop-filter: blur(10px); /* Blurred background effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.notification2 {
+    position: fixed;
+    bottom: 200px;
+    right: 200px;
+    width: 250px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.809); /* Semi-transparent background */
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(45, 45, 45, 0.3);
+    backdrop-filter: blur(10px); /* Blurred background effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#notification-message {
+    margin: 0;
+}
+#notification-message2 {
+    margin: 0;
+}
+#message-input, #command-message-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Rounded corners */
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text color */
+    margin: 5px 0;
+}
+
+#message-input::placeholder, #command-message-input::placeholder {
+    color: #aaa; /* Lighter placeholder color */
+}
+
+
+#messages, #command-messages {
+    border: 1px solid #ddd;
+    background-color: #ffffff; /* White background */
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    border-radius: 10px; /* Rounded corners */
+    margin: 10px auto;
+    max-width: 600px; /* Max width for larger screens */
+}
+
+#chat {
+    margin-top: 20px;
+}
+
+#disconnect-button {
+    background-color: #dc3545; /* Red background for disconnect button */
+}
+
+#disconnect-button:hover {
+    background-color: #c82333; /* Slightly darker red on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+#container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input::placeholder {
+    color: #d7d7d7c8; /* Replace with your desired placeholder text color */
+}
+.block {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EE5007;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection during drag */
+}
+
